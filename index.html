@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="KPRJ - Strategic development entity driving sustainable growth, unlocking land value, and shaping transformative communities across Johor.">
+    <meta name="keywords"
+        content="KPRJ, Johor, Sustainable Growth, Property Development, Engineering, Construction, Asset Management">
+    <title>KPRJ | Driving Sustainable Growth for Johor</title>
+    <link rel="stylesheet" href="css/output.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body class="bg-[#f9f9fd] text-[#0a0a0a] antialiased flex flex-col min-h-screen">
+
+    <!-- Header -->
+    <header class="absolute top-0 w-full z-50 flex items-center justify-between px-6 py-6 lg:px-16 text-white">
+        <div class="flex items-center gap-2 font-grifter text-xl tracking-wider">
+            <!-- Logo placeholder -->
+            <img src="assets/images/logo-comp.svg" alt="">
+        </div>
+        <nav class="hidden md:flex gap-10 text-[15px] font-medium">
+            <a href="#" class="hover:text-gray-300 transition-colors">Business Core</a>
+            <a href="#" class="hover:text-gray-300 transition-colors">Integrity & Governance</a>
+            <a href="#" class="hover:text-gray-300 transition-colors">Invest With Us</a>
+        </nav>
+        <button id="menu-btn" class="block p-2" aria-label="Menu">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                </path>
+            </svg>
+        </button>
+    </header>
+
+    <!-- Side Menu Overlay -->
+    <div id="side-menu" class="fixed inset-0 bg-white z-[100] flex flex-col transform translate-x-full transition-transform duration-500 ease-[cubic-bezier(0.77,0,0.175,1)]">
+        <div class="flex items-center justify-between px-6 py-6 lg:px-16">
+            <!-- Language Switcher -->
+            <div class="flex items-center text-[13px] font-bold tracking-wide gap-3">
+                <button class="text-gray-500 hover:text-black transition-colors">Malay</button>
+                <button class="px-3 py-1 bg-[#1565df] text-white rounded-md">English</button>
+            </div>
+            <!-- Close Button -->
+            <button id="close-menu-btn" class="p-2 text-black hover:opacity-70 transition-opacity" aria-label="Close Menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+
+        <div class="flex-1 flex flex-col md:flex-row px-6 lg:px-32 mt-8 md:mt-16 overflow-y-auto gap-10 md:gap-0">
+            <!-- Main Links -->
+            <div class="w-full md:w-1/2 flex flex-col items-start gap-4 pr-0 md:pr-12">
+                <button data-submenu="overview" class="menu-link w-full flex items-center justify-between font-grifter text-2xl md:text-3xl lg:text-[40px] text-black hover:bg-[#eef4ff] bg-[#eef4ff] px-6 py-4 rounded-lg text-left transition-colors">
+                    Overview
+                    <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 5l7 7-7 7M5 5l7 7-7 7"></path></svg>
+                </button>
+                <button data-submenu="none" class="menu-link w-full flex items-center justify-between font-grifter text-2xl md:text-3xl lg:text-[40px] text-black hover:bg-[#eef4ff] px-6 py-4 rounded-lg text-left transition-colors">
+                    News & Media
+                </button>
+                <button data-submenu="none" class="menu-link w-full flex items-center justify-between font-grifter text-2xl md:text-3xl lg:text-[40px] text-black hover:bg-[#eef4ff] px-6 py-4 rounded-lg text-left transition-colors">
+                    Career
+                </button>
+                <button data-submenu="contact" class="menu-link w-full flex items-center justify-between font-grifter text-2xl md:text-3xl lg:text-[40px] text-black hover:bg-[#eef4ff] px-6 py-4 rounded-lg text-left transition-colors">
+                    Contact Us
+                    <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 5l7 7-7 7M5 5l7 7-7 7"></path></svg>
+                </button>
+            </div>
+
+            <!-- Submenus Container -->
+            <div class="w-full md:w-1/2 md:pl-12 flex flex-col pt-4 relative min-h-[300px]">
+                <!-- Overview Submenu -->
+                <div id="submenu-overview" class="submenu-content absolute top-4 left-0 md:left-12 flex flex-col gap-6 opacity-100 pointer-events-auto transition-all duration-300 transform translate-y-0">
+                    <a href="#" class="font-grifter text-xl md:text-2xl lg:text-[28px] text-black hover:text-[#1565df] transition-colors">About KPRJ</a>
+                    <a href="#" class="font-grifter text-xl md:text-2xl lg:text-[28px] text-black hover:text-[#1565df] transition-colors">Executive Leadership</a>
+                    <a href="#" class="font-grifter text-xl md:text-2xl lg:text-[28px] text-black hover:text-[#1565df] transition-colors">Corporate Milestones</a>
+                </div>
+                <!-- Contact Us Submenu -->
+                <div id="submenu-contact" class="submenu-content absolute top-4 left-0 md:left-12 flex flex-col gap-6 opacity-0 pointer-events-none transition-all duration-300 transform -translate-y-4">
+                    <a href="#" class="font-grifter text-xl md:text-2xl lg:text-[28px] text-black hover:text-[#1565df] transition-colors">Jauhar Prihatin Form</a>
+                    <a href="#" class="font-grifter text-xl md:text-2xl lg:text-[28px] text-black hover:text-[#1565df] transition-colors">Whistleblowing</a>
+                    <a href="#" class="font-grifter text-xl md:text-2xl lg:text-[28px] text-black hover:text-[#1565df] transition-colors">F.A.Q</a>
+                    <a href="#" class="font-grifter text-xl md:text-2xl lg:text-[28px] text-black hover:text-[#1565df] transition-colors">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <main class="flex-grow">
+        <section id="hero-front"
+            class="relative w-full h-[80vh] md:h-[100vh] flex items-center justify-center text-center text-white overflow-hidden cursor-pointer">
+            <!-- Background Image -->
+            <img src="assets/images/hero-img-1.png" alt="Hero Background"
+                class="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none">
+            <div class="absolute inset-0 bg-black/40 z-0 pointer-events-none"></div>
+
+            <div class="relative z-10 px-6 max-w-[1000px] flex flex-col items-center gap-6 mt-16 pointer-events-none">
+                <h1 class="font-grifter text-5xl md:text-7xl lg:text-[85px] leading-[1.05] tracking-tight">
+                    Where Dreams<br>Become Real</h1>
+                <p
+                    class="text-base md:text-lg lg:text-[18px] font-medium max-w-[850px] tracking-wide opacity-95 leading-relaxed">
+                    We are an integrated development organisation delivering engineering and construction, property
+                    development, investment, asset management, and environmental solutions at scale</p>
+            </div>
+        </section>
+        <section id="kprj-word"
+            class="fixed inset-0 z-[100] h-screen bg-white flex flex-col justify-center items-center cursor-pointer invisible">
+            <h1 class="font-grifter text-5xl md:text-7xl lg:text-[154px] text-[#015fda] pointer-events-none">KPRJ</h1>
+        </section>
+
+        <!-- What We Do -->
+        <section id="what-we-do" class="px-6 py-16 lg:px-[60px] lg:py-32 mt-10 mb-20 relative w-full">
+
+            <div class="w-full  flex flex-col gap-6 relative z-20 max-w-[900px] ">
+                <h2 class="font-grifter text-4xl md:text-5xl text-[#015fda] tracking-wide">What We Do</h2>
+                <div class="text-gray-700 leading-relaxed text-justify space-y-4">
+                    <p>KPRJ is a state-linked development entity committed to delivering high-impact projects that
+                        strengthen Johor’s economic foundation.</p>
+                    <p>With a focus on strategic land development, sustainable planning, and long-term value
+                        creation, KPRJ plays a key role in shaping the next generation of integrated townships and
+                        commercial ecosystems.</p>
+                </div>
+                <a href="#"
+                    class="inline-flex items-center justify-center bg-[#1565df] text-white font-bold text-[13px] px-5 py-2.5 rounded hover:bg-[#104ab0] transition-colors w-fit shadow-md mt-2">
+                    Know More
+                    <svg class="w-3.5 h-3.5 ml-1.5" fill="none" stroke="currentColor" stroke-width="3"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 5l7 7-7 7M5 5l7 7-7 7"></path>
+                    </svg>
+                </a>
+            </div>
+
+            <!-- City Image (Main wide image) -->
+            <div class="mt-12 lg:mt-16 max-w-[1080px] w-full relative z-10">
+                <img src="assets/images/what-we-do-img-1.png" alt="City view"
+                    class="w-full h-auto object-cover rounded-xl shadow-lg" style="width: 100%;">
+            </div>
+
+            <!-- Top Right Guy Image -->
+            <div class="hidden lg:block absolute top-36 right-52 w-[280px] xl:w-[320px] z-20 group">
+                <div
+                    class="w-full aspect-[5/5] rounded-xl bg-gradient-to-b from-white to-[#3A90FF] p-[5px] shadow-2xl transition-transform duration-500 group-hover:-translate-y-2">
+                    <img src="assets/images/what-we-do-img-2.png" alt="Professional"
+                        class="w-full h-full  object-cover rounded-lg">
+                </div>
+            </div>
+
+            <!-- 3D Element -->
+            <div
+                class="hidden lg:block absolute top-[53%] -translate-y-1/2 right-[20%] xl:right-[16%] w-[140px] xl:w-[160px] z-30 pointer-events-none ">
+                <img src="assets/images/3d-1.png" alt="3D Object"
+                    class="w-full h-auto object-contain drop-shadow-2xl filter brightness-110">
+            </div>
+
+            <!-- Bottom Right Forest Image -->
+            <div class="hidden lg:block absolute bottom-12 right-32 w-[260px] xl:w-[300px] z-30 group">
+                <div
+                    class="w-full aspect-square rounded-xl overflow-hidden bg-gradient-to-b from-white to-[#3A90FF] p-[5px] shadow-2xl transition-transform duration-500 group-hover:-translate-y-2">
+                    <img src="assets/images/what-we-do-img-3.png" alt="Forest"
+                        class="w-full h-full object-cover rounded-lg">
+                </div>
+            </div>
+
+            <!-- Mobile Fallback for right images -->
+            <div class="lg:hidden flex gap-4 mt-8 overflow-x-auto pb-4 no-scrollbar">
+                <div
+                    class="w-[200px] shrink-0 aspect-[4/4] rounded-xl overflow-hidden bg-gradient-to-b from-white to-[#3A90FF] p-[5px] shadow-lg">
+                    <img src="assets/images/what-we-do-img-2.png" alt="Professional"
+                        class="w-full h-full object-cover rounded-lg">
+                </div>
+                <div
+                    class="w-[200px] shrink-0 aspect-[4/5] rounded-xl overflow-hidden bg-gradient-to-b from-white to-[#3A90FF] p-[5px] shadow-lg">
+                    <img src="assets/images/what-we-do-img-3.png" alt="Forest"
+                        class="w-full h-full object-cover rounded-lg">
+                </div>
+            </div>
+        </section>
+
+        <section id="banner-opt" class="relative w-full py-10 lg:pt-30 lg:pb-40  flex items-center justify-center">
+            <!-- Background Image -->
+            <img src="assets/images/bg-banner.png" alt="Banner Background"
+                class="absolute inset-0 w-full h-full object-cover">
+            <!-- Dark Overlay -->
+            <div class="absolute inset-0 bg-[#1e0a05]/40"></div>
+            <!-- Left Side: Object Image and White Box -->
+            <div
+                class="absolute bottom-20  left-52 bg-white rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.15)] p-6 lg:p-8 flex flex-col gap-6 w-[280px] lg:w-[320px] z-[9999]">
+                <!-- List Item 1 -->
+                <div class="flex items-center gap-4">
+                    <div class="text-[#015fda] shrink-0">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6">
+                            </path>
+                        </svg>
+                    </div>
+                    <span class="text-[#1a2b4c] font-bold text-[14px] lg:text-[15px] tracking-wide">Integrated
+                        Capabilities</span>
+                </div>
+                <!-- List Item 2 -->
+                <div class="flex items-center gap-4">
+                    <div class="text-[#015fda] shrink-0">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                            </path>
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z">
+                            </path>
+                        </svg>
+                    </div>
+                    <span class="text-[#1a2b4c] font-bold text-[14px] lg:text-[15px] tracking-wide">Strategic
+                        Backing and Trust</span>
+                </div>
+                <!-- List Item 3 -->
+                <div class="flex items-center gap-4">
+                    <div class="text-[#015fda] shrink-0">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z">
+                            </path>
+                        </svg>
+                    </div>
+                    <span class="text-[#1a2b4c] font-bold text-[14px] lg:text-[15px] tracking-wide">Execution at
+                        Scale</span>
+                </div>
+            </div>
+            <div class="absolute -top-20 left-52 z-40">
+                <!-- Object Image -->
+                <img src="assets/images/obj-banner.png" alt="Team Collaborating" class="w-full relative ">
+            </div>
+
+            <div
+                class="max-w-[1386px] w-full mx-auto px-6 lg:px-24 relative z-10 flex flex-col lg:flex-row items-center justify-end">
+                <!-- Right Side: Text & Button -->
+                <div class="w-full lg:w-[60%] flex flex-col items-start mt-20 lg:mt-0 lg:pl-32">
+                    <h2
+                        class="font-grifter text-[36px] md:text-[44px] lg:text-[54px] text-white leading-[1.1] mb-6 tracking-[1px]">
+                        Unlock Opportunities<br>With Us</h2>
+                    <p class="text-white/90 text-[15px] lg:text-[16px] mb-10 max-w-[500px] leading-relaxed font-sans">
+                        Partner with us to deliver high-impact developments across sectors, markets, and industries
+                    </p>
+                    <a href="#"
+                        class="inline-flex items-center justify-center bg-white text-[#015fda] font-bold text-[13px] px-5 py-2.5 rounded hover:bg-gray-50 transition-colors shadow-lg">
+                        Partner With Us
+                        <svg class="w-3 h-3 ml-1.5 mt-[1px]" fill="none" stroke="currentColor" stroke-width="3"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 5l7 7-7 7M5 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Core Business -->
+        <section
+            class="bg-white px-6 py-20 lg:px-24 lg:py-32 w-full text-center flex flex-col items-center shadow-[0_-10px_40px_rgba(0,0,0,0.03)] z-10 relative overflow-hidden">
+            <!-- Rectangle Ambient Gradient around section -->
+            <div
+                class="absolute inset-x-0 top-0 h-[70px] pointer-events-none bg-gradient-to-b from-[#015fda]/20 via-[#015fda]/10 to-transparent z-0">
+            </div>
+            <div
+                class="absolute inset-x-0 bottom-0 h-[70px] pointer-events-none bg-gradient-to-t from-[#015fda]/20 via-[#015fda]/10 to-transparent z-0">
+            </div>
+            <div
+                class="absolute inset-y-0 left-0 w-[70px] pointer-events-none bg-gradient-to-r from-[#015fda]/20 via-[#015fda]/10 to-transparent z-0">
+            </div>
+            <div
+                class="absolute inset-y-0 right-0 w-[70px] pointer-events-none bg-gradient-to-l from-[#015fda]/20 via-[#015fda]/10 to-transparent z-0">
+            </div>
+
+            <h2
+                class="font-grifter text-3xl md:text-4xl lg:text-[50px] text-[#015fda] mb-20 tracking-[1.5px] max-w-4xl leading-tight relative z-10">
+                Realising Possibilities, Shaping Tomorrow</h2>
+
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-[1386px] w-full text-left">
+                <!-- Item 1 -->
+                <div class="group cursor-pointer flex flex-col gap-5">
+                    <div class="w-full aspect-[3/4] overflow-hidden relative">
+                        <img src="assets/images/value-img-1.png" alt="Engineering & Construction"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="flex flex-col gap-3 items-start mt-2">
+                        <h3 class="font-grifter text-[18px] lg:text-[20px] tracking-wide text-[#1e0a05] leading-[1.2]">
+                            Engineering &<br>Construction</h3>
+                        <a href="#"
+                            class="inline-flex items-center justify-center bg-[#1565df] text-white font-medium text-[11px] lg:text-[12px] px-4 py-1.5 rounded hover:bg-[#104ab0] transition-colors mt-1">
+                            Read More <svg class="w-2.5 h-2.5 ml-1.5" fill="none" stroke="currentColor" stroke-width="3"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13 5l7 7-7 7M5 5l7 7-7 7">
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="group cursor-pointer flex flex-col gap-5">
+                    <div class="w-full aspect-[3/4] overflow-hidden relative">
+                        <img src="assets/images/value-img-2.png" alt="Property Development"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="flex flex-col gap-3 items-start mt-2">
+                        <h3 class="font-grifter text-[18px] lg:text-[20px] tracking-wide text-[#1e0a05] leading-[1.2]">
+                            Property<br>Development</h3>
+                        <a href="#"
+                            class="inline-flex items-center justify-center bg-[#1565df] text-white font-medium text-[11px] lg:text-[12px] px-4 py-1.5 rounded hover:bg-[#104ab0] transition-colors mt-1">
+                            Read More <svg class="w-2.5 h-2.5 ml-1.5" fill="none" stroke="currentColor" stroke-width="3"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13 5l7 7-7 7M5 5l7 7-7 7">
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="group cursor-pointer flex flex-col gap-5">
+                    <div class="w-full aspect-[3/4] overflow-hidden relative">
+                        <img src="assets/images/value-img-3.png" alt="Asset Management"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="flex flex-col gap-3 items-start mt-2">
+                        <h3 class="font-grifter text-[18px] lg:text-[20px] tracking-wide text-[#1e0a05] leading-[1.2]">
+                            Asset Management</h3>
+                        <a href="#"
+                            class="inline-flex items-center justify-center bg-[#1565df] text-white font-medium text-[11px] lg:text-[12px] px-4 py-1.5 rounded hover:bg-[#104ab0] transition-colors mt-1">
+                            Read More <svg class="w-2.5 h-2.5 ml-1.5" fill="none" stroke="currentColor" stroke-width="3"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13 5l7 7-7 7M5 5l7 7-7 7">
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="group cursor-pointer flex flex-col gap-5">
+                    <div class="w-full aspect-[3/4] overflow-hidden relative">
+                        <img src="assets/images/value-img-4.png" alt="Environment"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="flex flex-col gap-3 items-start mt-2">
+                        <h3 class="font-grifter text-[18px] lg:text-[20px] tracking-wide text-[#1e0a05] leading-[1.2]">
+                            Environment</h3>
+                        <a href="#"
+                            class="inline-flex items-center justify-center bg-[#1565df] text-white font-medium text-[11px] lg:text-[12px] px-4 py-1.5 rounded hover:bg-[#104ab0] transition-colors mt-1">
+                            Read More <svg class="w-2.5 h-2.5 ml-1.5" fill="none" stroke="currentColor" stroke-width="3"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13 5l7 7-7 7M5 5l7 7-7 7">
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Delivery Impact -->
+        <section id="delivery-impact"
+            class="bg-gradient-to-br from-[#7EB6FF] via-[#569FFF] to-[#2A71CF] text-white py-10 lg:py-16 px-6 sticky top-0 min-h-[100svh] justify-center z-0 overflow-hidden flex flex-col items-center cursor-pointer">
+            <h2 class="font-grifter text-3xl md:text-[40px] tracking-wide mb-3 relative z-10 text-center">How We Deliver
+                Impact</h2>
+            <p
+                class="text-base md:text-[16px] tracking-wide mb-8 lg:mb-10 text-center max-w-3xl relative z-10 opacity-90 leading-relaxed">
+                Through strategic planning, responsible development, and community-driven initiatives,<br
+                    class="hidden md:block">KPRJ transforms opportunities into sustainable growth.</p>
+
+            <div
+                class="w-full max-w-[1200px] relative z-10 flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-16 pointer-events-none">
+                <!-- Left Content: Texts -->
+                <div class="lg:w-5/12 flex flex-col gap-5 lg:gap-6">
+                    <!-- Layer 3 -->
+                    <div id="impact-text-3" class="flex flex-col items-start gap-1.5">
+                        <span
+                            class="px-3 py-0.5 border border-white rounded-full text-[12px] font-medium tracking-wide">Layer
+                            3</span>
+                        <h3 class="font-grifter text-lg lg:text-[20px] tracking-wide">Sustainable Value Creation</h3>
+                        <p class="text-[13px] lg:text-[14px] opacity-90 leading-snug">Our developments are designed to
+                            create long-term value — strengthening communities, supporting businesses, and enhancing the
+                            quality of life.</p>
+                    </div>
+
+                    <!-- Layer 2 -->
+                    <div id="impact-text-2" class="flex flex-col items-start gap-1.5">
+                        <span
+                            class="px-3 py-0.5 border border-white rounded-full text-[12px] font-medium tracking-wide">Layer
+                            2</span>
+                        <h3 class="font-grifter text-lg lg:text-[20px] tracking-wide">Development & Execution</h3>
+                        <p class="text-[13px] lg:text-[14px] opacity-90 leading-snug">Through engineering expertise and
+                            strong project management, we deliver infrastructure, developments, and initiatives that
+                            support Johor's progress.</p>
+                    </div>
+
+                    <!-- Layer 1 -->
+                    <div id="impact-text-1" class="flex flex-col items-start gap-1.5">
+                        <span
+                            class="px-3 py-0.5 border border-white rounded-full text-[12px] font-medium tracking-wide">Layer
+                            1</span>
+                        <h3 class="font-grifter text-lg lg:text-[20px] tracking-wide">Strategic Planning</h3>
+                        <p class="text-[13px] lg:text-[14px] opacity-90 leading-snug">We identify high-potential
+                            opportunities across Johor and develop comprehensive plans that align with economic growth
+                            and community needs.</p>
+                    </div>
+                </div>
+
+                <!-- Right Content: Isometric Images Stack -->
+                <div class="lg:w-7/12 relative w-full max-w-[500px]">
+                    <img id="impact-img-3" src="assets/images/motion-3.png" alt="Top Layer"
+                        class="absolute bottom-20 left-0 w-full h-auto z-30">
+                    <img id="impact-img-2" src="assets/images/motion-2.png" alt="Middle Layer"
+                        class="absolute bottom-5 left-0 w-full h-auto z-20">
+                    <img id="impact-img-1" src="assets/images/motion-1.png" alt="Base Layer"
+                        class="relative w-full h-auto z-10">
+                </div>
+            </div>
+        </section>
+        <!-- Township Developments -->
+        <section id="township-dev" class="py-24 bg-[#f9f9fd] flex flex-col items-center overflow-hidden relative z-20">
+            <div class="text-center mb-10 relative z-40">
+                <h2 class="font-grifter text-4xl md:text-[50px] text-[#0050d5] mb-2 tracking-wide">Township Developments
+                </h2>
+                <p class="text-[#475569] text-lg font-medium">Nurturing Vibrant Communities!</p>
+            </div>
+
+            <!-- Cards Container -->
+            <div class="relative w-full max-w-[900px] h-[450px] md:h-[600px] mx-auto px-6 mt-8 mb-10">
+                <!-- Card 1 -->
+                <div
+                    class="township-card absolute top-0 left-0 right-0 mx-auto w-full max-w-[800px] h-full bg-white rounded-sm overflow-hidden origin-top ">
+                    <div class="card-overlay absolute inset-0 z-20"></div>
+                    <div class="card-content absolute inset-0 z-10 flex flex-col bg-white">
+                        <div class="w-full h-[75%] md:h-[80%] relative bg-gray-100">
+                            <img src="assets/images/township-img-1.png" alt="Township Image"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <div
+                            class="w-full h-[25%] md:h-[20%] flex flex-col md:flex-row md:items-center justify-between px-6 md:px-8 py-4 bg-white border-t border-gray-100">
+                            <div class="flex flex-col">
+                                <h3 class="font-grifter text-[18px] md:text-[22px] text-black">Bangunan Dato' Jaafar
+                                    Muhammad</h3>
+                                <p class="text-[#475569] text-[13px] md:text-[14px] mt-0.5 md:mt-1 font-medium">Iskandar
+                                    Puteri</p>
+                            </div>
+                            <button
+                                class="township-next-btn flex items-center gap-1.5 text-[#0050d5] font-semibold text-[14px] hover:text-[#1565df] transition-colors mt-2 md:mt-0 ml-auto md:ml-0 group">
+                                <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
+                                    fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7">
+                                    </path>
+                                </svg>
+                                Next
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div
+                    class="township-card absolute top-0 left-0 right-0 mx-auto w-full max-w-[800px] h-full bg-white rounded-sm  overflow-hidden origin-top ">
+                    <div class="card-overlay absolute inset-0 z-20"></div>
+                    <div class="card-content absolute inset-0 z-10 flex flex-col bg-white">
+                        <div class="w-full h-[75%] md:h-[80%] relative bg-gray-100">
+                            <img src="assets/images/township-img-1.png" alt="Township Image"
+                                class="w-full h-full object-cover filter hue-rotate-15">
+                        </div>
+                        <div
+                            class="w-full h-[25%] md:h-[20%] flex flex-col md:flex-row md:items-center justify-between px-6 md:px-8 py-4 bg-white border-t border-gray-100">
+                            <div class="flex flex-col">
+                                <h3 class="font-grifter text-[18px] md:text-[22px] text-black">Bangunan Dato' Jaafar
+                                    Muhammad</h3>
+                                <p class="text-[#475569] text-[13px] md:text-[14px] mt-0.5 md:mt-1 font-medium">Iskandar
+                                    Puteri</p>
+                            </div>
+                            <button
+                                class="township-next-btn flex items-center gap-1.5 text-[#0050d5] font-semibold text-[14px] hover:text-[#1565df] transition-colors mt-2 md:mt-0 ml-auto md:ml-0 group">
+                                <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
+                                    fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7">
+                                    </path>
+                                </svg>
+                                Next
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div
+                    class="township-card absolute top-0 left-0 right-0 mx-auto w-full max-w-[800px] h-full bg-white rounded-sm  overflow-hidden origin-top ">
+                    <div class="card-overlay absolute inset-0 z-20"></div>
+                    <div class="card-content absolute inset-0 z-10 flex flex-col bg-white">
+                        <div class="w-full h-[75%] md:h-[80%] relative bg-gray-100">
+                            <img src="assets/images/township-img-1.png" alt="Township Image"
+                                class="w-full h-full object-cover filter saturate-50">
+                        </div>
+                        <div
+                            class="w-full h-[25%] md:h-[20%] flex flex-col md:flex-row md:items-center justify-between px-6 md:px-8 py-4 bg-white border-t border-gray-100">
+                            <div class="flex flex-col">
+                                <h3 class="font-grifter text-[18px] md:text-[22px] text-black">Bangunan Dato' Jaafar
+                                    Muhammad</h3>
+                                <p class="text-[#475569] text-[13px] md:text-[14px] mt-0.5 md:mt-1 font-medium">Iskandar
+                                    Puteri</p>
+                            </div>
+                            <button
+                                class="township-next-btn flex items-center gap-1.5 text-[#0050d5] font-semibold text-[14px] hover:text-[#1565df] transition-colors mt-2 md:mt-0 ml-auto md:ml-0 group">
+                                <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
+                                    fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7">
+                                    </path>
+                                </svg>
+                                Next
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="connect-with-us" class="relative z-20 flex flex-col">
+            <!-- Light Blue Header Area -->
+            <div class="bg-[#E5F0FF] pt-16 pb-12 lg:pt-24 lg:pb-16">
+                <div class="max-w-[1280px] mx-auto px-6 lg:px-24">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+                        <div class="max-w-2xl">
+                            <h2 class="font-grifter text-4xl lg:text-[44px] text-[#1565df] mb-4 tracking-wide">Connect
+                                with Us</h2>
+                            <p class="text-[#475569] text-[15px] leading-relaxed font-medium">
+                                Partner with us to deliver impactful developments across engineering, property,
+                                investments, assets, and sustainable solutions
+                            </p>
+                        </div>
+                        <a href="mailto:enquiry@kprj.com.my"
+                            class="inline-flex items-center gap-2 bg-[#1565df] text-white font-semibold text-[14px] px-6 py-3.5 rounded-lg hover:bg-[#104ab0] transition-colors shrink-0 shadow-md">
+                            enquiry@kprj.com.my
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13 5l7 7-7 7M5 5l7 7-7 7">
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carousel Overlapping White and Dark Navy -->
+            <div class="relative bg-white pt-10 pb-0">
+                <!-- Dark navy background band behind the bottom of the cards -->
+                <div class="absolute bottom-0 left-0 right-0 h-[45%]"></div>
+
+                <div class="max-w-[1280px] mx-auto px-6 lg:px-24 relative z-10">
+                    <!-- Cards Carousel -->
+                    <div id="connect-carousel"
+                        class="flex gap-4 lg:gap-5 overflow-x-auto no-scrollbar snap-x snap-mandatory cursor-grab active:cursor-grabbing select-none pb-12">
+                        <!-- Card 1 -->
+                        <div
+                            class="relative w-[240px] md:w-[260px] lg:w-[calc(20%-16px)] shrink-0 aspect-[3/4] lg:aspect-[4/5] rounded-xl overflow-hidden shadow-sm group cursor-pointer snap-start">
+                            <img src="images/property_dev_1777115101509.png" alt="Video thumbnail"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent">
+                            </div>
+                            <div
+                                class="absolute inset-0 m-auto w-12 h-12 bg-black/40 rounded-full flex items-center justify-center backdrop-blur-sm group-hover:bg-[#1565df] transition-colors">
+                                <svg class="w-5 h-5 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z" />
+                                </svg>
+                            </div>
+                            <div class="absolute bottom-3 right-3 w-6 h-6 text-white drop-shadow-lg">
+                                <svg fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.34 2.88 2.88 0 012.31-4.53 2.66 2.66 0 011.61.54V9.35a6.08 6.08 0 00-2-.31 6.32 6.32 0 00-1.28 12.55 6.32 6.32 0 006.87-6.08V8.6a8.4 8.4 0 004.9 1.54v-3.45z" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div
+                            class="relative w-[240px] md:w-[260px] lg:w-[calc(20%-16px)] shrink-0 aspect-[3/4] lg:aspect-[4/5] rounded-xl overflow-hidden shadow-sm group cursor-pointer snap-start">
+                            <img src="images/hero_bg_1777115086264.png" alt="Video thumbnail"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent">
+                            </div>
+                            <div
+                                class="absolute inset-0 m-auto w-12 h-12 bg-black/40 rounded-full flex items-center justify-center backdrop-blur-sm group-hover:bg-[#1565df] transition-colors">
+                                <svg class="w-5 h-5 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z" />
+                                </svg>
+                            </div>
+                            <div class="absolute bottom-3 right-3 w-6 h-6 text-white drop-shadow-lg">
+                                <svg fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.34 2.88 2.88 0 012.31-4.53 2.66 2.66 0 011.61.54V9.35a6.08 6.08 0 00-2-.31 6.32 6.32 0 00-1.28 12.55 6.32 6.32 0 006.87-6.08V8.6a8.4 8.4 0 004.9 1.54v-3.45z" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div
+                            class="relative w-[240px] md:w-[260px] lg:w-[calc(20%-16px)] shrink-0 aspect-[3/4] lg:aspect-[4/5] rounded-xl overflow-hidden shadow-sm group cursor-pointer snap-start">
+                            <img src="images/property_dev_1777115101509.png" alt="Video thumbnail"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter hue-rotate-30">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent">
+                            </div>
+                            <div
+                                class="absolute inset-0 m-auto w-12 h-12 bg-black/40 rounded-full flex items-center justify-center backdrop-blur-sm group-hover:bg-[#1565df] transition-colors">
+                                <svg class="w-5 h-5 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z" />
+                                </svg>
+                            </div>
+                            <div class="absolute bottom-3 right-3 w-6 h-6 text-white drop-shadow-lg">
+                                <svg fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.34 2.88 2.88 0 012.31-4.53 2.66 2.66 0 011.61.54V9.35a6.08 6.08 0 00-2-.31 6.32 6.32 0 00-1.28 12.55 6.32 6.32 0 006.87-6.08V8.6a8.4 8.4 0 004.9 1.54v-3.45z" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- Card 4 -->
+                        <div
+                            class="relative w-[240px] md:w-[260px] lg:w-[calc(20%-16px)] shrink-0 aspect-[3/4] lg:aspect-[4/5] rounded-xl overflow-hidden shadow-sm group cursor-pointer snap-start">
+                            <img src="images/hero_bg_1777115086264.png" alt="Video thumbnail"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter saturate-150">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent">
+                            </div>
+                            <div
+                                class="absolute inset-0 m-auto w-12 h-12 bg-black/40 rounded-full flex items-center justify-center backdrop-blur-sm group-hover:bg-[#1565df] transition-colors">
+                                <svg class="w-5 h-5 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z" />
+                                </svg>
+                            </div>
+                            <div class="absolute bottom-3 right-3 w-6 h-6 text-white drop-shadow-lg">
+                                <svg fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.34 2.88 2.88 0 012.31-4.53 2.66 2.66 0 011.61.54V9.35a6.08 6.08 0 00-2-.31 6.32 6.32 0 00-1.28 12.55 6.32 6.32 0 006.87-6.08V8.6a8.4 8.4 0 004.9 1.54v-3.45z" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- Card 5 -->
+                        <div
+                            class="relative w-[240px] md:w-[260px] lg:w-[calc(20%-16px)] shrink-0 aspect-[3/4] lg:aspect-[4/5] rounded-xl overflow-hidden shadow-sm group cursor-pointer snap-start">
+                            <img src="images/property_dev_1777115101509.png" alt="Video thumbnail"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter sepia-[0.3]">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent">
+                            </div>
+                            <div
+                                class="absolute inset-0 m-auto w-12 h-12 bg-black/40 rounded-full flex items-center justify-center backdrop-blur-sm group-hover:bg-[#1565df] transition-colors">
+                                <svg class="w-5 h-5 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z" />
+                                </svg>
+                            </div>
+                            <div class="absolute bottom-3 right-3 w-6 h-6 text-white drop-shadow-lg">
+                                <svg fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.34 2.88 2.88 0 012.31-4.53 2.66 2.66 0 011.61.54V9.35a6.08 6.08 0 00-2-.31 6.32 6.32 0 00-1.28 12.55 6.32 6.32 0 006.87-6.08V8.6a8.4 8.4 0 004.9 1.54v-3.45z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Follow Block -->
+            <div
+                class="w-full bg-[#f8f5f6] py-6 relative z-20 flex flex-col sm:flex-row justify-center items-center gap-4">
+                <span class="text-[#1e283e] font-bold text-[15px] tracking-wide">Follow KPRJ on</span>
+                <div class="flex gap-2">
+                    <a href="#"
+                        class="w-[30px] h-[30px] rounded-[5px] bg-[#1565df] flex items-center justify-center text-white hover:bg-[#104ab0] transition-colors">
+                        <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.34 2.88 2.88 0 012.31-4.53 2.66 2.66 0 011.61.54V9.35a6.08 6.08 0 00-2-.31 6.32 6.32 0 00-1.28 12.55 6.32 6.32 0 006.87-6.08V8.6a8.4 8.4 0 004.9 1.54v-3.45z" />
+                        </svg>
+                    </a>
+                    <a href="#"
+                        class="w-[30px] h-[30px] rounded-[5px] bg-[#1565df] flex items-center justify-center text-white hover:bg-[#104ab0] transition-colors">
+                        <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.64.07-4.85.07s-3.58-.01-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92-.06-1.27-.07-1.64-.07-4.85s.01-3.58.07-4.85c.15-3.23 1.66-4.77 4.92-4.92 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07c-4.27.2-6.78 2.71-6.98 6.98C0 8.33 0 8.74 0 12s.01 3.67.07 4.95c.2 4.27 2.71 6.78 6.98 6.98C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c4.27-.2 6.78-2.71 6.98-6.98C23.99 15.67 24 15.26 24 12s-.01-3.67-.07-4.95c-.2-4.27-2.71-6.78-6.98-6.98C15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1018.16 12 6.16 6.16 0 0012 5.84zm0 10.16A4 4 0 1116 12a4 4 0 01-4 4zm6.4-11.44a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z" />
+                        </svg>
+                    </a>
+                    <a href="#"
+                        class="w-[30px] h-[30px] rounded-[5px] bg-[#1565df] flex items-center justify-center text-white hover:bg-[#104ab0] transition-colors">
+                        <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M22.67 0H1.33C.6 0 0 .6 0 1.33v21.34C0 23.4.6 24 1.33 24h11.49V14.7h-3.13v-3.62h3.13V8.41c0-3.1 1.89-4.8 4.66-4.8 1.33 0 2.47.1 2.8.14v3.24h-1.92c-1.5 0-1.79.71-1.79 1.76v2.31h3.59l-.47 3.62h-3.12V24h6.12c.73 0 1.33-.6 1.33-1.33V1.33C24 .6 23.4 0 22.67 0z" />
+                        </svg>
+                    </a>
+                    <a href="#"
+                        class="w-[30px] h-[30px] rounded-[5px] bg-[#1565df] flex items-center justify-center text-white hover:bg-[#104ab0] transition-colors">
+                        <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M23.5 6.18a3 3 0 00-2.1-2.1C19.54 3.5 12 3.5 12 3.5s-7.54 0-9.4.58A3 3 0 00.5 6.18C0 8.04 0 12 0 12s0 3.96.5 5.82a3 3 0 002.1 2.1c1.86.58 9.4.58 9.4.58s7.54 0 9.4-.58a3 3 0 002.1-2.1C24 15.96 24 12 24 12s0-3.96-.5-5.82zM9.54 15.57V8.43L15.82 12l-6.28 3.57z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#10386D] text-[#94a3b8]  px-6 lg:px-24">
+        <!-- CTA Block -->
+        <div class="-mx-6 lg:-mx-24 bg-[#1565df] relative overflow-hidden mb-16 lg:mb-20 flex flex-col md:flex-row">
+            <!-- Background Image Area (Right) -->
+            <div class="absolute inset-y-0 right-0 w-full md:w-1/2">
+                <img src="assets/images/footer-img.png" alt="Journey" class="w-full h-full object-cover ">
+                <div
+                    class="absolute w-[35%] inset-y-0 left-0 bg-gradient-to-r from-[#1565df] via-[#1565df]/80 to-transparent">
+                </div>
+            </div>
+
+            <!-- Decorative Lines -->
+            <svg class="absolute inset-0 w-full h-full pointer-events-none opacity-20" preserveAspectRatio="none">
+                <line x1="0" y1="60%" x2="40%" y2="0" stroke="white" stroke-width="1"></line>
+                <line x1="20%" y1="100%" x2="60%" y2="50%" stroke="white" stroke-width="1"></line>
+            </svg>
+
+            <!-- Content Area -->
+            <div
+                class="w-full max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-12 px-6 lg:px-24 py-16 lg:py-24 relative z-10">
+                <div class="lg:col-span-6 flex flex-col items-start gap-5">
+                    <h2 class="text-white font-grifter text-4xl lg:text-[44px] leading-[1.1] tracking-wide">
+                        Start Your Journey<br>With Us
+                    </h2>
+                    <p class="text-white text-[15px] leading-[1.6] max-w-[420px] opacity-90 font-medium">
+                        Join a resilient organisation with strong foundations, committed to long-term growth and people
+                        development
+                    </p>
+                    <a href="#"
+                        class="inline-flex items-center justify-center gap-2 bg-white text-[#1565df] font-bold text-[13px] px-5 py-2.5 rounded hover:bg-gray-100 transition-colors mt-3">
+                        Find More
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 5l7 7-7 7M5 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 pb-12 lg:pb-16">
+            <div class="lg:col-span-4">
+                <div class="flex items-center gap-2 text-white mb-6">
+                    <img src="assets/images/logo-comp-footer.svg" alt="">
+                </div>
+                <p class="text-[14px] leading-[21px] max-w-sm">Crafting spaces that inspire. We believe in the power of
+                    thoughtful design to transform how we live, work, and connect.</p>
+            </div>
+
+            <div class="lg:col-start-7 lg:col-span-2 flex flex-col gap-3">
+                <h3 class="text-white font-semibold text-[15px] mb-2 tracking-wide">Quick Links</h3>
+                <ul class="flex flex-col gap-3">
+                    <li><a href="#" class="hover:text-white transition-colors text-[14px]">Projects</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors text-[14px]">About</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors text-[14px]">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="lg:col-start-10 lg:col-span-3 flex flex-col gap-3">
+                <h3 class="text-white font-semibold text-[15px] mb-2 tracking-wide">Contact</h3>
+                <ul class="flex flex-col gap-3">
+                    <li><span class="text-[14px]">hello@archform.com</span></li>
+                    <li><span class="text-[14px]">+1 (555) 123-4567</span></li>
+                    <li><span class="text-[14px]">New York, NY</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="border-t border-[#334155] py-8 text-center text-[12px] w-full max-w-[1280px] mx-auto">
+            © 2026 Archform. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        const slider = document.getElementById('connect-carousel');
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        slider.addEventListener('mousedown', (e) => {
+            isDown = true;
+            slider.classList.add('active');
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+        });
+
+        slider.addEventListener('mouseleave', () => {
+            isDown = false;
+            slider.classList.remove('active');
+        });
+
+        slider.addEventListener('mouseup', () => {
+            isDown = false;
+            slider.classList.remove('active');
+        });
+
+        slider.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault(); // prevent text/image selection and dragging
+            const x = e.pageX - slider.offsetLeft;
+            const walk = (x - startX) * 2; // scroll speed multiplier
+            slider.scrollLeft = scrollLeft - walk;
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            gsap.registerPlugin(ScrollToPlugin);
+
+            const heroFront = document.getElementById("hero-front");
+            const kprjWord = document.getElementById("kprj-word");
+            const kprjText = kprjWord.querySelector("h1");
+
+            // Setup
+            window.scrollTo(0, 0);
+            gsap.set(document.body, { overflow: "hidden" });
+            gsap.set(kprjWord, { autoAlpha: 0 });
+            gsap.set(kprjText, { scale: 20, autoAlpha: 0 });
+
+            // Interaction 1
+            heroFront.addEventListener("click", () => {
+                const tl = gsap.timeline();
+                tl.to(kprjWord, { autoAlpha: 1, duration: 0.5 })
+                    .to(kprjText, { scale: 1, autoAlpha: 1, duration: 2.5, ease: "power4.out" }, "-=0.3");
+            });
+
+            // Interaction 2
+            kprjWord.addEventListener("click", () => {
+                const tl = gsap.timeline();
+
+                tl.add(() => {
+                    heroFront.style.display = "none";
+                    window.scrollTo(0, 0);
+                    const header = document.querySelector("header");
+                    if (header) {
+                        header.classList.remove("text-white");
+                        header.classList.add("text-[#0a0a0a]");
+                    }
+                })
+                    .to(kprjText, { scale: 0, autoAlpha: 0, duration: 0.5, ease: "power2.in" })
+                    .to(kprjWord, { autoAlpha: 0, duration: 0.5, ease: "power2.inOut" }, "-=0.2")
+                    .set(document.body, { overflow: "auto" })
+                    .add(() => {
+                        kprjWord.style.display = "none";
+                    });
+            });
+            // Delivery Impact Animation
+            const deliveryImpact = document.getElementById("delivery-impact");
+            const impactText2 = document.getElementById("impact-text-2");
+            const impactText3 = document.getElementById("impact-text-3");
+            const impactImg2 = document.getElementById("impact-img-2");
+            const impactImg3 = document.getElementById("impact-img-3");
+
+            if (deliveryImpact) {
+                gsap.set([impactText2, impactText3], { autoAlpha: 0, x: -30 });
+                gsap.set([impactImg2, impactImg3], { autoAlpha: 0, y: -100 });
+
+                let impactAnimated = false;
+
+                deliveryImpact.addEventListener("click", () => {
+                    if (impactAnimated) return;
+                    impactAnimated = true;
+
+                    const impactTl = gsap.timeline();
+                    impactTl.to(impactText2, { autoAlpha: 1, x: 0, duration: 0.5 })
+                        .to(impactImg2, { autoAlpha: 1, y: 0, duration: 0.8, ease: "power3.out" }, "<")
+                        .to(impactText3, { autoAlpha: 1, x: 0, duration: 0.5 }, "+=0.2")
+                        .to(impactImg3, { autoAlpha: 1, y: 0, duration: 0.8, ease: "power3.out" }, "<");
+                });
+            }
+
+            // Township Dev Stack Carousel
+            const townshipCards = gsap.utils.toArray('.township-card');
+            const nextBtns = document.querySelectorAll('.township-next-btn');
+
+            if (townshipCards.length > 0) {
+                // States: Front, Middle, Back
+                const states = [
+                    { y: 64, scale: 1, zIndex: 30, overlayAlpha: 0 },
+                    { y: 32, scale: 0.94, zIndex: 20, overlayAlpha: 1, bg: '#b9d7ff' },
+                    { y: 0, scale: 0.88, zIndex: 10, overlayAlpha: 1, bg: '#e1efff' }
+                ];
+
+                let currentCards = [...townshipCards]; // working copy
+
+                function updateTownshipCards(animate = true) {
+                    currentCards.forEach((card, i) => {
+                        const overlay = card.querySelector('.card-overlay');
+                        const content = card.querySelector('.card-content');
+                        const state = states[i];
+
+                        gsap.to(card, {
+                            y: state.y,
+                            scale: state.scale,
+                            zIndex: state.zIndex,
+                            duration: animate ? 0.6 : 0,
+                            ease: "power3.inOut"
+                        });
+
+                        gsap.to(overlay, {
+                            autoAlpha: state.overlayAlpha,
+                            backgroundColor: state.bg || 'transparent',
+                            duration: animate ? 0.6 : 0,
+                            ease: "power3.inOut"
+                        });
+
+                        gsap.to(content, {
+                            autoAlpha: i === 0 ? 1 : 0,
+                            duration: animate ? 0.6 : 0,
+                            ease: "power3.inOut"
+                        });
+                    });
+                }
+
+                // Initial setup
+                updateTownshipCards(false);
+
+                nextBtns.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const frontCard = currentCards[0];
+
+                        // Animate front card dropping out
+                        gsap.to(frontCard, {
+                            y: 200,
+                            autoAlpha: 0,
+                            duration: 0.4,
+                            ease: "power2.in",
+                            onComplete: () => {
+                                // Rotate array
+                                currentCards.push(currentCards.shift());
+
+                                // Reset the card that was front (now back) so it animates in from above slightly
+                                gsap.set(frontCard, { y: -50, autoAlpha: 1 });
+
+                                // Update positions
+                                updateTownshipCards(true);
+                            }
+                        });
+                    });
+                });
+            }
+        });
+    </script>
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const sideMenu = document.getElementById('side-menu');
+        const mLinks = document.querySelectorAll('.menu-link');
+        const submenus = document.querySelectorAll('.submenu-content');
+
+        if(menuBtn && closeMenuBtn && sideMenu) {
+            menuBtn.addEventListener('click', () => {
+                sideMenu.classList.remove('translate-x-full');
+                document.body.style.overflow = 'hidden';
+            });
+
+            closeMenuBtn.addEventListener('click', () => {
+                sideMenu.classList.add('translate-x-full');
+                document.body.style.overflow = '';
+            });
+
+            mLinks.forEach(link => {
+                link.addEventListener('mouseenter', () => {
+                    const targetSub = link.getAttribute('data-submenu');
+                    
+                    if(targetSub && targetSub !== 'none') {
+                        mLinks.forEach(l => l.classList.remove('bg-[#eef4ff]'));
+                        link.classList.add('bg-[#eef4ff]');
+
+                        submenus.forEach(sub => {
+                            if (sub.id === `submenu-${targetSub}`) {
+                                sub.classList.remove('opacity-0', 'pointer-events-none', '-translate-y-4');
+                                sub.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
+                            } else {
+                                sub.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
+                                sub.classList.add('opacity-0', 'pointer-events-none', '-translate-y-4');
+                            }
+                        });
+                    } else if (targetSub === 'none') {
+                        mLinks.forEach(l => l.classList.remove('bg-[#eef4ff]'));
+                        link.classList.add('bg-[#eef4ff]');
+                        
+                        submenus.forEach(sub => {
+                            sub.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
+                            sub.classList.add('opacity-0', 'pointer-events-none', '-translate-y-4');
+                        });
+                    }
+                });
+            });
+        }
+    </script>
+</body>
+
+</html>
