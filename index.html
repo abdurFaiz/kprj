@@ -390,7 +390,7 @@
 
         <!-- Delivery Impact -->
         <section id="delivery-impact"
-            class="bg-gradient-to-br from-[#7EB6FF] via-[#569FFF] to-[#2A71CF] text-white py-10 lg:py-16 px-6 min-h-screen justify-center z-0 overflow-hidden flex flex-col items-center">
+            class="bg-gradient-to-br from-[#7EB6FF] via-[#569FFF] to-[#2A71CF] text-white py-10 lg:py-16 px-6 min-h-screen justify-center z-10 overflow-hidden flex flex-col items-center">
             <h2 class="font-grifter text-3xl md:text-[40px] tracking-wide mb-3 relative z-10 text-center">How We Deliver
                 Impact</h2>
             <p
@@ -967,6 +967,38 @@
                     // Layer 3 reveals at ~66% scroll progress
                     .to(impactText3, { autoAlpha: 1, x: 0, duration: 1, ease: "power2.out" }, 1.8)
                     .to(impactImg3, { autoAlpha: 1, y: 0, duration: 1.2, ease: "power3.out" }, 1.8);
+            }
+
+            // Township Dev — slide up over delivery-impact on scroll
+            const townshipDev = document.getElementById("township-dev");
+            if (townshipDev && deliveryImpact) {
+                // Ensure township always renders above delivery-impact
+                gsap.set(townshipDev, { zIndex: 30, yPercent: 12 });
+
+                // Slide township up as it enters — scrubbed to scroll position
+                gsap.to(townshipDev, {
+                    yPercent: 0,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: townshipDev,
+                        start: "top bottom",   // begins when township top hits viewport bottom
+                        end: "top top",        // completes when township top reaches viewport top
+                        scrub: true,
+                    }
+                });
+
+                // Simultaneously scale + fade delivery-impact slightly as township covers it
+                gsap.to(deliveryImpact, {
+                    scale: 0.94,
+                    autoAlpha: 0.5,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: townshipDev,
+                        start: "top 60%",
+                        end: "top top",
+                        scrub: true,
+                    }
+                });
             }
 
             // Township Dev Stack Carousel
