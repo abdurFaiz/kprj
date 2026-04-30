@@ -14,6 +14,37 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
+    <style>
+        /* Split button group — text link + separate arrow button */
+        .split-btn {
+            display: inline-flex;
+            flex-direction: row;
+        }
+
+        .split-btn .split-btn-arrow {
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.2s ease;
+            transform: translateX(0);
+        }
+
+        .split-btn:hover .split-btn-arrow {
+            transform: translateX(7px);
+        }
+
+        /* Legacy alias */
+        .know-more-group {
+            display: inline-flex;
+            flex-direction: row;
+        }
+
+        .know-more-group .know-more-btn {
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.2s ease;
+            transform: translateX(0);
+        }
+
+        .know-more-group:hover .know-more-btn {
+            transform: translateX(7px);
+        }
+    </style>
 
 </head>
 
@@ -56,73 +87,87 @@
             </button>
         </div>
 
-        <div class="flex-1 flex flex-col md:flex-row px-6 lg:px-32 mt-8 md:mt-16 overflow-y-auto gap-10 md:gap-0">
+        <div class="flex-1 flex flex-col px-6 lg:px-32 mt-8 md:mt-16 overflow-y-auto">
             <!-- Main Links -->
-            <div class="w-full md:w-1/2 flex flex-col items-start gap-4 pr-0 md:pr-12">
-                <button data-submenu="overview"
-                    class="menu-link w-full flex items-center justify-between font-grifter text-2xl md:text-3xl lg:text-[40px] text-black hover:bg-[#eef4ff] bg-[#eef4ff] px-6 py-4 rounded-lg text-left transition-colors">
-                    Overview
-                    <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" stroke-width="3"
-                        viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 5l7 7-7 7M5 5l7 7-7 7"></path>
-                    </svg>
-                </button>
-                <button data-submenu="none"
-                    class="menu-link w-full flex items-center justify-between font-grifter text-2xl md:text-3xl lg:text-[40px] text-black hover:bg-[#eef4ff] px-6 py-4 rounded-lg text-left transition-colors">
-                    News & Media
-                </button>
-                <button data-submenu="none"
-                    class="menu-link w-full flex items-center justify-between font-grifter text-2xl md:text-3xl lg:text-[40px] text-black hover:bg-[#eef4ff] px-6 py-4 rounded-lg text-left transition-colors">
-                    Career
-                </button>
-                <button data-submenu="contact"
-                    class="menu-link w-full flex items-center justify-between font-grifter text-2xl md:text-3xl lg:text-[40px] text-black hover:bg-[#eef4ff] px-6 py-4 rounded-lg text-left transition-colors">
-                    Contact Us
-                    <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" stroke-width="3"
-                        viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 5l7 7-7 7M5 5l7 7-7 7"></path>
-                    </svg>
-                </button>
-            </div>
-
-            <!-- Submenus Container -->
-            <div class="w-full md:w-1/2 md:pl-12 flex flex-col pt-4 relative min-h-[300px]">
-                <!-- Overview Submenu -->
-                <div id="submenu-overview"
-                    class="submenu-content absolute top-4 left-0 md:left-12 flex flex-col gap-6 opacity-100 pointer-events-auto transition-all duration-300 transform translate-y-0">
-                    <a href="#"
-                        class="font-grifter text-xl md:text-2xl lg:text-[28px] text-black hover:text-[#1565df] transition-colors">About
-                        KPRJ</a>
-                    <a href="#"
-                        class="font-grifter text-xl md:text-2xl lg:text-[28px] text-black hover:text-[#1565df] transition-colors">Executive
-                        Leadership</a>
-                    <a href="#"
-                        class="font-grifter text-xl md:text-2xl lg:text-[28px] text-black hover:text-[#1565df] transition-colors">Corporate
-                        Milestones</a>
+            <div class="w-full flex flex-col items-start gap-4">
+                <!-- Overview Menu Item -->
+                <div class="w-full">
+                    <button data-submenu="overview"
+                        class="menu-link w-full flex items-center justify-between font-grifter text-2xl md:text-3xl lg:text-[40px] text-black hover:bg-[#eef4ff] px-6 py-4 rounded-lg text-left transition-colors">
+                        Overview
+                        <svg class="w-5 h-5 md:w-6 md:h-6 transition-transform duration-300" fill="none"
+                            stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <!-- Overview Submenu -->
+                    <div id="submenu-overview"
+                        class="submenu-content max-h-0 overflow-hidden transition-all duration-300 pl-6 md:pl-12">
+                        <div class="flex flex-col gap-3 pt-4 pb-2">
+                            <a href="#"
+                                class="font-grifter text-lg md:text-xl lg:text-[24px] text-black hover:text-[#1565df] transition-colors">About
+                                KPRJ</a>
+                            <a href="#"
+                                class="font-grifter text-lg md:text-xl lg:text-[24px] text-black hover:text-[#1565df] transition-colors">Executive
+                                Leadership</a>
+                            <a href="#"
+                                class="font-grifter text-lg md:text-xl lg:text-[24px] text-black hover:text-[#1565df] transition-colors">Corporate
+                                Milestones</a>
+                        </div>
+                    </div>
                 </div>
-                <!-- Contact Us Submenu -->
-                <div id="submenu-contact"
-                    class="submenu-content absolute top-4 left-0 md:left-12 flex flex-col gap-6 opacity-0 pointer-events-none transition-all duration-300 transform -translate-y-4">
-                    <a href="#"
-                        class="font-grifter text-xl md:text-2xl lg:text-[28px] text-black hover:text-[#1565df] transition-colors">Jauhar
-                        Prihatin Form</a>
-                    <a href="#"
-                        class="font-grifter text-xl md:text-2xl lg:text-[28px] text-black hover:text-[#1565df] transition-colors">Whistleblowing</a>
-                    <a href="#"
-                        class="font-grifter text-xl md:text-2xl lg:text-[28px] text-black hover:text-[#1565df] transition-colors">F.A.Q</a>
-                    <a href="#"
-                        class="font-grifter text-xl md:text-2xl lg:text-[28px] text-black hover:text-[#1565df] transition-colors">Contact
-                        Us</a>
+
+                <!-- News & Media Menu Item -->
+                <div class="w-full">
+                    <button data-submenu="none"
+                        class="menu-link w-full flex items-center justify-between font-grifter text-2xl md:text-3xl lg:text-[40px] text-black hover:bg-[#eef4ff] px-6 py-4 rounded-lg text-left transition-colors">
+                        News & Media
+                    </button>
+                </div>
+
+                <!-- Career Menu Item -->
+                <div class="w-full">
+                    <button data-submenu="none"
+                        class="menu-link w-full flex items-center justify-between font-grifter text-2xl md:text-3xl lg:text-[40px] text-black hover:bg-[#eef4ff] px-6 py-4 rounded-lg text-left transition-colors">
+                        Career
+                    </button>
+                </div>
+
+                <!-- Contact Us Menu Item -->
+                <div class="w-full">
+                    <button data-submenu="contact"
+                        class="menu-link w-full flex items-center justify-between font-grifter text-2xl md:text-3xl lg:text-[40px] text-black hover:bg-[#eef4ff] px-6 py-4 rounded-lg text-left transition-colors">
+                        Contact Us
+                        <svg class="w-5 h-5 md:w-6 md:h-6 transition-transform duration-300" fill="none"
+                            stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <!-- Contact Us Submenu -->
+                    <div id="submenu-contact"
+                        class="submenu-content max-h-0 overflow-hidden transition-all duration-300 pl-6 md:pl-12">
+                        <div class="flex flex-col gap-3 pt-4 pb-2">
+                            <a href="#"
+                                class="font-grifter text-lg md:text-xl lg:text-[24px] text-black hover:text-[#1565df] transition-colors">Jauhar
+                                Prihatin Form</a>
+                            <a href="#"
+                                class="font-grifter text-lg md:text-xl lg:text-[24px] text-black hover:text-[#1565df] transition-colors">Whistleblowing</a>
+                            <a href="#"
+                                class="font-grifter text-lg md:text-xl lg:text-[24px] text-black hover:text-[#1565df] transition-colors">F.A.Q</a>
+                            <a href="#"
+                                class="font-grifter text-lg md:text-xl lg:text-[24px] text-black hover:text-[#1565df] transition-colors">Contact
+                                Us</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Hero Section -->
-    <main class="flex-grow">
+    <main class="grow">
         <section id="hero-front"
             class="relative w-full h-[80vh] md:h-[100vh] flex items-center justify-center text-center text-white overflow-hidden cursor-pointer">
-            <!-- Background Image -->
             <img src="assets/images/hero-img-1.png" alt="Hero Background"
                 class="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none">
             <div class="absolute inset-0 bg-black/40 z-0 pointer-events-none"></div>
@@ -143,7 +188,6 @@
 
         <!-- What We Do -->
         <section id="what-we-do" class="px-6 py-16 lg:px-[60px] lg:py-32 mt-10 mb-20 relative w-full">
-
             <div class="w-full  flex flex-col gap-6 relative z-20 max-w-[900px] ">
                 <h2 class="font-grifter text-4xl md:text-5xl text-[#015fda] tracking-wide">What We Do</h2>
                 <div class="text-gray-700 leading-relaxed text-justify space-y-4">
@@ -153,14 +197,18 @@
                         creation, KPRJ plays a key role in shaping the next generation of integrated townships and
                         commercial ecosystems.</p>
                 </div>
-                <a href="#"
-                    class="inline-flex items-center justify-center bg-[#1565df] text-white font-bold text-[13px] px-5 py-2.5 rounded hover:bg-[#104ab0] transition-colors w-fit shadow-md mt-2">
-                    Know More
-                    <svg class="w-3.5 h-3.5 ml-1.5" fill="none" stroke="currentColor" stroke-width="3"
-                        viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 5l7 7-7 7M5 5l7 7-7 7"></path>
-                    </svg>
-                </a>
+                <div class="flex flex-row know-more-group w-fit">
+                    <a href="#"
+                        class="inline-flex items-center justify-center bg-[#1565df] text-white font-bold text-sm px-5 py-2.5 rounded-lg hover:bg-[#104ab0] transition-colors w-fit shadow-md">
+                        Know More
+                    </a>
+                    <button
+                        class="know-more-btn py-2 px-3 rounded-lg bg-[#1565df] text-white flex items-center justify-center hover:bg-[#104ab0] cursor-pointer">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 5l7 7-7 7M5 5l7 7-7 7"></path>
+                        </svg>
+                    </button>
+                </div>
             </div>
 
             <!-- City Image (Main wide image) -->
@@ -195,14 +243,14 @@
             </div>
 
             <!-- Mobile Fallback for right images -->
-            <div class="lg:hidden flex gap-4 mt-8 overflow-x-auto pb-4 no-scrollbar">
+            <div class="lg:hidden grid grid-cols-2 gap-4 mt-8 pb-4">
                 <div
-                    class="w-[200px] shrink-0 aspect-[4/4] rounded-xl overflow-hidden bg-gradient-to-b from-white to-[#3A90FF] p-[5px] shadow-lg">
+                    class=" aspect-[4/4] rounded-xl overflow-hidden bg-gradient-to-b from-white to-[#3A90FF] p-[5px] shadow-lg">
                     <img src="assets/images/what-we-do-img-2.png" alt="Professional"
                         class="w-full h-full object-cover rounded-lg">
                 </div>
                 <div
-                    class="w-[200px] shrink-0 aspect-[4/5] rounded-xl overflow-hidden bg-gradient-to-b from-white to-[#3A90FF] p-[5px] shadow-lg">
+                    class=" aspect-[4/4] rounded-xl overflow-hidden bg-gradient-to-b from-white to-[#3A90FF] p-[5px] shadow-lg">
                     <img src="assets/images/what-we-do-img-3.png" alt="Forest"
                         class="w-full h-full object-cover rounded-lg">
                 </div>
@@ -271,21 +319,26 @@
                     <p class="text-white/90 text-[15px] lg:text-[16px] mb-10 max-w-[500px] leading-relaxed font-sans">
                         Partner with us to deliver high-impact developments across sectors, markets, and industries
                     </p>
-                    <a href="#"
-                        class="inline-flex items-center justify-center bg-white text-[#015fda] font-bold text-[13px] px-5 py-2.5 rounded hover:bg-gray-50 transition-colors shadow-lg">
-                        Partner With Us
-                        <svg class="w-3 h-3 ml-1.5 mt-[1px]" fill="none" stroke="currentColor" stroke-width="3"
-                            viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 5l7 7-7 7M5 5l7 7-7 7"></path>
-                        </svg>
-                    </a>
+                    <div class="split-btn gap-0">
+                        <a href="#"
+                            class="inline-flex items-center justify-center bg-white rounded-lg text-[#015fda] font-bold text-[13px] px-5 py-2.5 rounded-l hover:bg-gray-50 transition-colors shadow-lg">
+                            Partner With Us
+                        </a>
+                        <button
+                            class="split-btn-arrow px-3 py-2.5  bg-white rounded-lg text-[#015fda] flex items-center justify-center hover:bg-gray-50 transition-colors shadow-lg cursor-pointer">
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13 5l7 7-7 7M5 5l7 7-7 7">
+                                </path>
+                            </svg>
+                        </button>
+                    </div>
                 </div>
 
             </div>
         </section>
 
         <!-- Core Business -->
-        <section
+        <section id="core-business"
             class="bg-white px-6 py-20 lg:px-24 lg:py-32 w-full text-center flex flex-col items-center shadow-[0_-10px_40px_rgba(0,0,0,0.03)] z-10 relative overflow-hidden">
             <!-- Rectangle Ambient Gradient around section -->
             <div
@@ -308,81 +361,117 @@
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-[1386px] w-full text-left">
                 <!-- Item 1 -->
                 <div class="group cursor-pointer flex flex-col gap-5">
+                    <!--  removed the redundant inner <div class="group"> -->
                     <div class="w-full aspect-[3/4] overflow-hidden relative">
+                        <!-- Background image (static) -->
+                        <img src="assets/images/bg-core-business-1.png" alt="Engineering & Construction Background"
+                            class="w-full h-full object-cover">
+                        <!-- Foreground image (scales on hover) -->
                         <img src="assets/images/value-img-1.png" alt="Engineering & Construction"
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                     </div>
+
                     <div class="flex flex-col gap-3 items-start mt-2">
                         <h3 class="font-grifter text-[18px] lg:text-[20px] tracking-wide text-[#1e0a05] leading-[1.2]">
                             Engineering &<br>Construction</h3>
-                        <a href="#"
-                            class="inline-flex items-center justify-center bg-[#1565df] text-white font-medium text-[11px] lg:text-[12px] px-4 py-1.5 rounded hover:bg-[#104ab0] transition-colors mt-1">
-                            Read More <svg class="w-2.5 h-2.5 ml-1.5" fill="none" stroke="currentColor" stroke-width="3"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M13 5l7 7-7 7M5 5l7 7-7 7">
-                                </path>
-                            </svg>
-                        </a>
+                        <div class="split-btn">
+                            <a href="#"
+                                class="inline-flex items-center justify-center bg-[#1565df] text-white font-medium text-[12px] px-3 py-2 rounded-lg hover:bg-[#104ab0] transition-colors">
+                                Read More
+                            </a>
+                            <button
+                                class="split-btn-arrow px-3 py-2.5 bg-[#1565df] text-white rounded-lg flex items-center justify-center hover:bg-[#104ab0] transition-colors cursor-pointer">
+                                <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="3"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M13 5l7 7-7 7M5 5l7 7-7 7">
+                                    </path>
+                                </svg>
+                            </button>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Item 2 -->
                 <div class="group cursor-pointer flex flex-col gap-5">
                     <div class="w-full aspect-[3/4] overflow-hidden relative">
-                        <img src="assets/images/value-img-2.png" alt="Property Development"
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <img src="assets/images/value-img-2.png" alt="Engineering & Construction Background"
+                            class="absolute inset-0 w-full h-full object-cover z-20 group-hover:scale-110 transition-transform duration-700">
+                        <img src="assets/images/bg-core-business-2.png" alt="Engineering & Construction"
+                            class="absolute inset-0 w-full h-full object-cover z-0">
                     </div>
                     <div class="flex flex-col gap-3 items-start mt-2">
                         <h3 class="font-grifter text-[18px] lg:text-[20px] tracking-wide text-[#1e0a05] leading-[1.2]">
                             Property<br>Development</h3>
-                        <a href="#"
-                            class="inline-flex items-center justify-center bg-[#1565df] text-white font-medium text-[11px] lg:text-[12px] px-4 py-1.5 rounded hover:bg-[#104ab0] transition-colors mt-1">
-                            Read More <svg class="w-2.5 h-2.5 ml-1.5" fill="none" stroke="currentColor" stroke-width="3"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M13 5l7 7-7 7M5 5l7 7-7 7">
-                                </path>
-                            </svg>
-                        </a>
+                        <div class="split-btn">
+                            <a href="#"
+                                class="inline-flex items-center justify-center bg-[#1565df] text-white font-medium text-[12px] px-3 py-2 rounded-lg hover:bg-[#104ab0] transition-colors">
+                                Read More
+                            </a>
+                            <button
+                                class="split-btn-arrow px-3 py-2.5  bg-[#1565df] text-white rounded-lg flex items-center justify-center hover:bg-[#104ab0] transition-colors cursor-pointer">
+                                <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="3"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M13 5l7 7-7 7M5 5l7 7-7 7">
+                                    </path>
+                                </svg>
+                            </button>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Item 3 -->
                 <div class="group cursor-pointer flex flex-col gap-5">
                     <div class="w-full aspect-[3/4] overflow-hidden relative">
-                        <img src="assets/images/value-img-3.png" alt="Asset Management"
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <img src="assets/images/value-img-3.png" alt="Engineering & Construction Background"
+                            class="absolute inset-0 w-full h-full object-cover z-20 group-hover:scale-110 transition-transform duration-700">
+                        <img src="assets/images/bg-core-business-3.png" alt="Engineering & Construction"
+                            class="absolute inset-0 w-full h-full object-cover z-0">
                     </div>
                     <div class="flex flex-col gap-3 items-start mt-2">
                         <h3 class="font-grifter text-[18px] lg:text-[20px] tracking-wide text-[#1e0a05] leading-[1.2]">
                             Asset Management</h3>
-                        <a href="#"
-                            class="inline-flex items-center justify-center bg-[#1565df] text-white font-medium text-[11px] lg:text-[12px] px-4 py-1.5 rounded hover:bg-[#104ab0] transition-colors mt-1">
-                            Read More <svg class="w-2.5 h-2.5 ml-1.5" fill="none" stroke="currentColor" stroke-width="3"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M13 5l7 7-7 7M5 5l7 7-7 7">
-                                </path>
-                            </svg>
-                        </a>
+                        <div class="split-btn ">
+                            <a href="#"
+                                class="inline-flex items-center justify-center bg-[#1565df] text-white font-medium text-[12px] px-3 py-2 rounded-lg hover:bg-[#104ab0] transition-colors">
+                                Read More
+                            </a>
+                            <button
+                                class="split-btn-arrow px-3 py-2.5  bg-[#1565df] text-white rounded-lg flex items-center justify-center hover:bg-[#104ab0] transition-colors cursor-pointer">
+                                <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="3"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M13 5l7 7-7 7M5 5l7 7-7 7">
+                                    </path>
+                                </svg>
+                            </button>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Item 4 -->
                 <div class="group cursor-pointer flex flex-col gap-5">
                     <div class="w-full aspect-[3/4] overflow-hidden relative">
-                        <img src="assets/images/value-img-4.png" alt="Environment"
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <img src="assets/images/value-img-4.png" alt="Engineering & Construction Background"
+                            class="absolute inset-0 w-full h-full object-cover z-20 group-hover:scale-110 transition-transform duration-700">
+                        <img src="assets/images/bg-core-business-4.png" alt="Engineering & Construction"
+                            class="absolute inset-0 w-full h-full object-cover z-0">
                     </div>
                     <div class="flex flex-col gap-3 items-start mt-2">
                         <h3 class="font-grifter text-[18px] lg:text-[20px] tracking-wide text-[#1e0a05] leading-[1.2]">
                             Environment</h3>
-                        <a href="#"
-                            class="inline-flex items-center justify-center bg-[#1565df] text-white font-medium text-[11px] lg:text-[12px] px-4 py-1.5 rounded hover:bg-[#104ab0] transition-colors mt-1">
-                            Read More <svg class="w-2.5 h-2.5 ml-1.5" fill="none" stroke="currentColor" stroke-width="3"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M13 5l7 7-7 7M5 5l7 7-7 7">
-                                </path>
-                            </svg>
-                        </a>
+                        <div class="split-btn">
+                            <a href="#"
+                                class="inline-flex items-center justify-center bg-[#1565df] text-white font-medium text-[12px] px-3 py-2 rounded-lg hover:bg-[#104ab0] transition-colors">
+                                Read More
+                            </a>
+                            <button
+                                class="split-btn-arrow px-3 py-2.5 bg-[#1565df] text-white rounded-lg flex items-center justify-center hover:bg-[#104ab0] transition-colors cursor-pointer">
+                                <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="3"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M13 5l7 7-7 7M5 5l7 7-7 7">
+                                    </path>
+                                </svg>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -390,7 +479,7 @@
 
         <!-- Delivery Impact -->
         <section id="delivery-impact"
-            class="bg-gradient-to-br from-[#7EB6FF] via-[#569FFF] to-[#2A71CF] text-white py-10 lg:py-16 px-6 min-h-screen justify-center z-10 overflow-hidden flex flex-col items-center">
+            class="bg-gradient-to-br from-[#7EB6FF] via-[#569FFF] to-[#2A71CF] text-white py-10 lg:py-16 px-6 min-h-screen justify-center z-20 overflow-hidden flex flex-col items-center">
             <h2 class="font-grifter text-3xl md:text-[40px] tracking-wide mb-3 relative z-10 text-center">How We Deliver
                 Impact</h2>
             <p
@@ -448,7 +537,7 @@
             </div>
         </section>
         <!-- Township Developments -->
-        <section id="township-dev" class="py-24 bg-[#f9f9fd] flex flex-col items-center overflow-hidden relative z-20">
+        <section id="township-dev" class="py-24 bg-[#f9f9fd] flex flex-col items-center overflow-hidden relative">
             <div class="text-center mb-10 relative z-40">
                 <h2 class="font-grifter text-4xl md:text-[50px] text-[#0050d5] mb-2 tracking-wide">Township Developments
                 </h2>
@@ -457,6 +546,36 @@
 
             <!-- Cards Container -->
             <div class="relative w-full max-w-[900px] h-[450px] md:h-[600px] mx-auto px-6 mt-8 mb-10">
+                <!-- Card 4 (deepest back layer — thin strip) -->
+                <div
+                    class="township-card absolute top-0 left-0 right-0 mx-auto w-full max-w-[800px] h-full bg-white rounded-sm overflow-hidden origin-top">
+                    <div class="card-overlay absolute inset-0 z-20"></div>
+                    <div class="card-content absolute inset-0 z-10 flex flex-col bg-white">
+                        <div class="w-full h-[75%] md:h-[80%] relative bg-gray-100">
+                            <img src="assets/images/township-img-1.png" alt="Township Image"
+                                class="w-full h-full object-cover filter grayscale-[0.4] brightness-95">
+                        </div>
+                        <div
+                            class="w-full h-[40%] md:h-[20%] flex flex-col md:flex-row md:items-center justify-between px-6 md:px-8 py-4 bg-white border-t border-gray-100">
+                            <div class="flex flex-col">
+                                <h3 class="font-grifter text-[18px] md:text-[22px] text-black">Bangunan Dato' Jaafar
+                                    Muhammad</h3>
+                                <p class="text-[#475569] text-[13px] md:text-[14px] mt-0.5 md:mt-1 font-medium">Iskandar
+                                    Puteri</p>
+                            </div>
+                            <button
+                                class="township-next-btn flex items-center gap-1.5 text-[#0050d5] font-semibold text-[14px] hover:text-[#1565df] transition-colors mt-2 md:mt-0 ml-auto md:ml-0 group">
+                                <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
+                                    fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7">
+                                    </path>
+                                </svg>
+                                Next
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Card 1 -->
                 <div
                     class="township-card absolute top-0 left-0 right-0 mx-auto w-full max-w-[800px] h-full bg-white rounded-sm overflow-hidden origin-top ">
@@ -562,15 +681,20 @@
                                 investments, assets, and sustainable solutions
                             </p>
                         </div>
-                        <a href="mailto:enquiry@kprj.com.my"
-                            class="inline-flex items-center gap-2 bg-[#1565df] text-white font-semibold text-[14px] px-6 py-3.5 rounded-lg hover:bg-[#104ab0] transition-colors shrink-0 shadow-md">
-                            enquiry@kprj.com.my
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M13 5l7 7-7 7M5 5l7 7-7 7">
-                                </path>
-                            </svg>
-                        </a>
+                        <div class="split-btn">
+                            <a href="mailto:enquiry@kprj.com.my"
+                                class="inline-flex items-center justify-center bg-[#1565df] text-white font-medium text-[20px] px-3 py-2 rounded-lg hover:bg-[#104ab0] transition-colors">
+                                enquiry@kprj.com.my
+                            </a>
+                            <button
+                                class="split-btn-arrow px-3 py-2 bg-[#1565df] text-white rounded-lg flex items-center justify-center hover:bg-[#104ab0] transition-colors cursor-pointer">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M13 5l7 7-7 7M5 5l7 7-7 7">
+                                    </path>
+                                </svg>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -698,31 +822,31 @@
                 <span class="text-[#1e283e] font-bold text-[15px] tracking-wide">Follow KPRJ on</span>
                 <div class="flex gap-2">
                     <a href="#"
-                        class="w-[30px] h-[30px] rounded-[5px] bg-[#1565df] flex items-center justify-center text-white hover:bg-[#104ab0] transition-colors">
-                        <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.34 2.88 2.88 0 012.31-4.53 2.66 2.66 0 011.61.54V9.35a6.08 6.08 0 00-2-.31 6.32 6.32 0 00-1.28 12.55 6.32 6.32 0 006.87-6.08V8.6a8.4 8.4 0 004.9 1.54v-3.45z" />
+                        class="w-[45px] h-[45px] rounded-[5px] bg-[#1565df] flex items-center justify-center text-white hover:bg-[#104ab0] transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
+                            <path fill="currentColor"
+                                d="M16.6 5.82s.51.5 0 0A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6c0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64c0 3.33 2.76 5.7 5.69 5.7c3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3s-1.88.09-3.24-1.48" />
                         </svg>
                     </a>
                     <a href="#"
-                        class="w-[30px] h-[30px] rounded-[5px] bg-[#1565df] flex items-center justify-center text-white hover:bg-[#104ab0] transition-colors">
-                        <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.64.07-4.85.07s-3.58-.01-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92-.06-1.27-.07-1.64-.07-4.85s.01-3.58.07-4.85c.15-3.23 1.66-4.77 4.92-4.92 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07c-4.27.2-6.78 2.71-6.98 6.98C0 8.33 0 8.74 0 12s.01 3.67.07 4.95c.2 4.27 2.71 6.78 6.98 6.98C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c4.27-.2 6.78-2.71 6.98-6.98C23.99 15.67 24 15.26 24 12s-.01-3.67-.07-4.95c-.2-4.27-2.71-6.78-6.98-6.98C15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1018.16 12 6.16 6.16 0 0012 5.84zm0 10.16A4 4 0 1116 12a4 4 0 01-4 4zm6.4-11.44a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z" />
+                        class="w-[45px] h-[45px] rounded-[5px] bg-[#1565df] flex items-center justify-center text-white hover:bg-[#104ab0] transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
+                            <path fill="currentColor"
+                                d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3" />
                         </svg>
                     </a>
                     <a href="#"
-                        class="w-[30px] h-[30px] rounded-[5px] bg-[#1565df] flex items-center justify-center text-white hover:bg-[#104ab0] transition-colors">
-                        <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M22.67 0H1.33C.6 0 0 .6 0 1.33v21.34C0 23.4.6 24 1.33 24h11.49V14.7h-3.13v-3.62h3.13V8.41c0-3.1 1.89-4.8 4.66-4.8 1.33 0 2.47.1 2.8.14v3.24h-1.92c-1.5 0-1.79.71-1.79 1.76v2.31h3.59l-.47 3.62h-3.12V24h6.12c.73 0 1.33-.6 1.33-1.33V1.33C24 .6 23.4 0 22.67 0z" />
+                        class="w-[45px] h-[45px] rounded-[5px] bg-[#1565df] flex items-center justify-center text-white hover:bg-[#104ab0] transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
+                            <path fill="currentColor"
+                                d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95" />
                         </svg>
                     </a>
                     <a href="#"
-                        class="w-[30px] h-[30px] rounded-[5px] bg-[#1565df] flex items-center justify-center text-white hover:bg-[#104ab0] transition-colors">
-                        <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M23.5 6.18a3 3 0 00-2.1-2.1C19.54 3.5 12 3.5 12 3.5s-7.54 0-9.4.58A3 3 0 00.5 6.18C0 8.04 0 12 0 12s0 3.96.5 5.82a3 3 0 002.1 2.1c1.86.58 9.4.58 9.4.58s7.54 0 9.4-.58a3 3 0 002.1-2.1C24 15.96 24 12 24 12s0-3.96-.5-5.82zM9.54 15.57V8.43L15.82 12l-6.28 3.57z" />
+                        class="w-[45px] h-[45px] rounded-[5px] bg-[#1565df] flex items-center justify-center text-white hover:bg-[#104ab0] transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
+                            <path fill="currentColor"
+                                d="m10 15l5.19-3L10 9zm11.56-7.83c.13.47.22 1.1.28 1.9c.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83c-.25.9-.83 1.48-1.73 1.73c-.47.13-1.33.22-2.65.28c-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44c-.9-.25-1.48-.83-1.73-1.73c-.13-.47-.22-1.1-.28-1.9c-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83c.25-.9.83-1.48 1.73-1.73c.47-.13 1.33-.22 2.65-.28c1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44c.9.25 1.48.83 1.73 1.73" />
                         </svg>
                     </a>
                 </div>
@@ -759,14 +883,20 @@
                         Join a resilient organisation with strong foundations, committed to long-term growth and people
                         development
                     </p>
-                    <a href="#"
-                        class="inline-flex items-center justify-center gap-2 bg-white text-[#1565df] font-bold text-[13px] px-5 py-2.5 rounded hover:bg-gray-100 transition-colors mt-3">
-                        Find More
-                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5"
-                            viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 5l7 7-7 7M5 5l7 7-7 7"></path>
-                        </svg>
-                    </a>
+                    <div class="split-btn mt-3">
+                        <a href="#"
+                            class="inline-flex items-center justify-center bg-white text-[#1565df] font-semibold text-[12px] px-3 py-2 rounded-lg">
+                            Find More
+                        </a>
+                        <button
+                            class="split-btn-arrow px-3 py-2.5  bg-white text-[#1565df] rounded-lg flex items-center justify-center cursor-pointer">
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13 5l7 7-7 7M5 5l7 7-7 7">
+                                </path>
+                            </svg>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -950,6 +1080,7 @@
                 // Build the scrubbed timeline — ScrollTrigger lives on the timeline, not on child tweens
                 const impactTl = gsap.timeline({
                     scrollTrigger: {
+                        id: "delivery-impact-pin",
                         trigger: deliveryImpact,
                         start: "top top",       // fires only when section reaches top of viewport
                         end: "+=180%",          // pin for 1.8x viewport height of scroll travel
@@ -969,34 +1100,60 @@
                     .to(impactImg3, { autoAlpha: 1, y: 0, duration: 1.2, ease: "power3.out" }, 1.8);
             }
 
-            // Township Dev — slide up over delivery-impact on scroll
+            // Township Dev — slide up from below and overlay the pinned delivery-impact
             const townshipDev = document.getElementById("township-dev");
             if (townshipDev && deliveryImpact) {
-                // Ensure township always renders above delivery-impact
-                gsap.set(townshipDev, { zIndex: 30, yPercent: 12 });
+                // Set initial state: township starts below viewport, positioned absolutely
+                gsap.set(townshipDev, {
+                    position: "fixed",
+                    top: "100vh",
+                    left: 0,
+                    width: "100%",
+                    zIndex: 30
+                });
 
-                // Slide township up as it enters — scrubbed to scroll position
-                gsap.to(townshipDev, {
-                    yPercent: 0,
-                    ease: "none",
-                    scrollTrigger: {
-                        trigger: townshipDev,
-                        start: "top bottom",   // begins when township top hits viewport bottom
-                        end: "top top",        // completes when township top reaches viewport top
-                        scrub: true,
+                // Get the ScrollTrigger instance from delivery impact timeline
+                const deliveryImpactST = ScrollTrigger.getById("delivery-impact-pin");
+
+                // Create ScrollTrigger that slides township up during the LAST part of delivery impact
+                ScrollTrigger.create({
+                    trigger: deliveryImpact,
+                    start: "top top",
+                    end: "+=210%",  // same as delivery impact pin duration
+                    scrub: true,
+                    onUpdate: (self) => {
+                        // Township only starts sliding up in the last 33% of delivery impact scroll
+                        // progress 0-0.66: township stays below (top: 100vh)
+                        // progress 0.66-1.0: township slides up (top: 100vh → 0)
+                        if (self.progress > 0.66) {
+                            const slideProgress = (self.progress - 0.66) / 0.34; // normalize to 0-1
+                            const topValue = 100 - (slideProgress * 100); // 100vh → 0vh
+                            gsap.set(townshipDev, { top: `${topValue}vh` });
+                        } else {
+                            gsap.set(townshipDev, { top: "100vh" });
+                        }
                     }
                 });
 
-                // Simultaneously scale + fade delivery-impact slightly as township covers it
-                gsap.to(deliveryImpact, {
-                    scale: 0.94,
-                    autoAlpha: 0.5,
-                    ease: "none",
-                    scrollTrigger: {
-                        trigger: townshipDev,
-                        start: "top 60%",
-                        end: "top top",
-                        scrub: true,
+                // After delivery impact ends, convert township to static positioning
+                ScrollTrigger.create({
+                    trigger: deliveryImpact,
+                    start: "bottom top",
+                    onEnter: () => {
+                        gsap.set(townshipDev, {
+                            position: "relative",
+                            top: "auto",
+                            clearProps: "position,top,left,width"
+                        });
+                    },
+                    onLeaveBack: () => {
+                        gsap.set(townshipDev, {
+                            position: "fixed",
+                            top: "0vh",
+                            left: 0,
+                            width: "100%",
+                            zIndex: 30
+                        });
                     }
                 });
             }
@@ -1006,11 +1163,12 @@
             const nextBtns = document.querySelectorAll('.township-next-btn');
 
             if (townshipCards.length > 0) {
-                // States: Front, Middle, Back
+                // States: Front, Middle, Back, Deepest
                 const states = [
-                    { y: 64, scale: 1, zIndex: 30, overlayAlpha: 0 },
-                    { y: 32, scale: 0.94, zIndex: 20, overlayAlpha: 1, bg: '#b9d7ff' },
-                    { y: 0, scale: 0.88, zIndex: 10, overlayAlpha: 1, bg: '#e1efff' }
+                    { y: 64, scale: 1, zIndex: 40, overlayAlpha: 0 },
+                    { y: 32, scale: 0.94, zIndex: 30, overlayAlpha: 1, bg: '#b9d7ff' },
+                    { y: 16, scale: 0.88, zIndex: 20, overlayAlpha: 1, bg: '#d4e8ff' },
+                    { y: 0, scale: 0.82, zIndex: 10, overlayAlpha: 1, bg: '#e8f3ff' }
                 ];
 
                 let currentCards = [...townshipCards]; // working copy
@@ -1078,7 +1236,6 @@
         const closeMenuBtn = document.getElementById('close-menu-btn');
         const sideMenu = document.getElementById('side-menu');
         const mLinks = document.querySelectorAll('.menu-link');
-        const submenus = document.querySelectorAll('.submenu-content');
 
         if (menuBtn && closeMenuBtn && sideMenu) {
             menuBtn.addEventListener('click', () => {
@@ -1091,31 +1248,37 @@
                 document.body.style.overflow = '';
             });
 
+            // Accordion-style submenu toggle
             mLinks.forEach(link => {
-                link.addEventListener('mouseenter', () => {
+                link.addEventListener('click', () => {
                     const targetSub = link.getAttribute('data-submenu');
 
                     if (targetSub && targetSub !== 'none') {
-                        mLinks.forEach(l => l.classList.remove('bg-[#eef4ff]'));
-                        link.classList.add('bg-[#eef4ff]');
+                        const submenu = document.getElementById(`submenu-${targetSub}`);
+                        const arrow = link.querySelector('svg');
+                        const isOpen = submenu.style.maxHeight && submenu.style.maxHeight !== '0px';
 
-                        submenus.forEach(sub => {
-                            if (sub.id === `submenu-${targetSub}`) {
-                                sub.classList.remove('opacity-0', 'pointer-events-none', '-translate-y-4');
-                                sub.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
-                            } else {
-                                sub.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
-                                sub.classList.add('opacity-0', 'pointer-events-none', '-translate-y-4');
-                            }
-                        });
-                    } else if (targetSub === 'none') {
-                        mLinks.forEach(l => l.classList.remove('bg-[#eef4ff]'));
-                        link.classList.add('bg-[#eef4ff]');
+                        if (isOpen) {
+                            // Close submenu
+                            submenu.style.maxHeight = '0px';
+                            link.classList.remove('bg-[#eef4ff]');
+                            if (arrow) arrow.style.transform = 'rotate(0deg)';
+                        } else {
+                            // Close all other submenus first
+                            document.querySelectorAll('.submenu-content').forEach(sub => {
+                                sub.style.maxHeight = '0px';
+                            });
+                            mLinks.forEach(l => {
+                                l.classList.remove('bg-[#eef4ff]');
+                                const otherArrow = l.querySelector('svg');
+                                if (otherArrow) otherArrow.style.transform = 'rotate(0deg)';
+                            });
 
-                        submenus.forEach(sub => {
-                            sub.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
-                            sub.classList.add('opacity-0', 'pointer-events-none', '-translate-y-4');
-                        });
+                            // Open this submenu
+                            submenu.style.maxHeight = submenu.scrollHeight + 'px';
+                            link.classList.add('bg-[#eef4ff]');
+                            if (arrow) arrow.style.transform = 'rotate(180deg)';
+                        }
                     }
                 });
             });
